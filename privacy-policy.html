@@ -13,13 +13,13 @@
             --card-background: #FFFFFF;
             --border-color: #E5E7EB;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             background-color: var(--background);
@@ -27,7 +27,7 @@
             line-height: 1.6;
             padding: 20px;
         }
-        
+
         .container {
             max-width: 800px;
             margin: 0 auto;
@@ -36,30 +36,30 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
             padding: 40px;
         }
-        
+
         .header {
             text-align: center;
             margin-bottom: 40px;
             padding-bottom: 20px;
             border-bottom: 1px solid var(--border-color);
         }
-        
+
         .logo {
             font-size: 32px;
             margin-bottom: 10px;
         }
-        
+
         h1 {
             color: var(--primary-color);
             font-size: 28px;
             margin-bottom: 10px;
         }
-        
+
         .last-updated {
             color: var(--text-secondary);
             font-size: 14px;
         }
-        
+
         h2 {
             color: var(--primary-color);
             font-size: 20px;
@@ -68,43 +68,43 @@
             padding-bottom: 8px;
             border-bottom: 2px solid var(--border-color);
         }
-        
+
         h3 {
             font-size: 16px;
             margin-top: 20px;
             margin-bottom: 10px;
         }
-        
+
         p {
             margin-bottom: 15px;
         }
-        
+
         ul {
             margin-bottom: 15px;
             padding-left: 25px;
         }
-        
+
         li {
             margin-bottom: 8px;
         }
-        
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
         }
-        
+
         th, td {
             padding: 12px;
             text-align: left;
             border: 1px solid var(--border-color);
         }
-        
+
         th {
             background-color: var(--background);
             font-weight: 600;
         }
-        
+
         .highlight {
             background-color: #FEF3C7;
             padding: 15px;
@@ -112,7 +112,7 @@
             margin: 15px 0;
             border-left: 4px solid #F59E0B;
         }
-        
+
         .footer {
             margin-top: 40px;
             padding-top: 20px;
@@ -121,29 +121,29 @@
             color: var(--text-secondary);
             font-size: 14px;
         }
-        
+
         a {
             color: var(--primary-color);
             text-decoration: none;
         }
-        
+
         a:hover {
             text-decoration: underline;
         }
-        
+
         @media (max-width: 600px) {
             .container {
                 padding: 20px;
             }
-            
+
             h1 {
                 font-size: 24px;
             }
-            
+
             table {
                 font-size: 14px;
             }
-            
+
             th, td {
                 padding: 8px;
             }
@@ -154,103 +154,156 @@
     <div class="container">
         <div class="header">
             <h1>Política de Privacidad</h1>
-            <p class="last-updated">Última actualización: Febrero 2026</p>
+            <p class="last-updated">Última actualización: Marzo 2026</p>
         </div>
-        
+
         <h2>1. Introducción</h2>
         <p>Bienvenido a Anotalo. Esta Política de Privacidad describe cómo recopilamos, usamos y protegemos tu información cuando utilizas nuestra aplicación de gestión de finanzas personales.</p>
-        
+
         <h2>2. Información que Recopilamos</h2>
-        
-        <h3>2.1 Información de Cuenta</h3>
-        <ul>
-            <li><strong>Correo electrónico:</strong> Utilizado para crear y gestionar tu cuenta de usuario.</li>
-            <li><strong>Identificador de usuario:</strong> Un identificador único generado automáticamente para tu cuenta.</li>
-        </ul>
-        
-        <h3>2.2 Datos Financieros</h3>
-        <ul>
-            <li><strong>Transacciones:</strong> Registros de ingresos y gastos que ingresas manualmente.</li>
-            <li><strong>Cuentas:</strong> Nombres de las cuentas que creas (ej: "Efectivo", "Banco").</li>
-            <li><strong>Categorías:</strong> Categorías personalizadas para organizar tus transacciones.</li>
-        </ul>
-        
-        <h3>2.3 Datos de Audio (Opcional)</h3>
-        <ul>
-            <li>Si utilizas la función de entrada por voz, grabamos temporalmente tu audio para transcribirlo.</li>
-            <li>El audio se envía a nuestros servidores solo para procesamiento y se elimina inmediatamente.</li>
-            <li>No almacenamos grabaciones de audio de ningún tipo.</li>
-        </ul>
-        
-        <h2>3. Cómo Usamos Tu Información</h2>
-        
+
         <table>
             <thead>
                 <tr>
                     <th>Dato</th>
-                    <th>Propósito</th>
-                    <th>Almacenamiento</th>
+                    <th>Recolectado</th>
+                    <th>Compartido con terceros</th>
+                    <th>Uso</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>Email</td>
-                    <td>Autenticación y recuperación de cuenta</td>
-                    <td>Nuestra nube</td>
+                    <td>Sí</td>
+                    <td>No (solo Supabase como backend)</td>
+                    <td>Autenticación, creación de cuenta</td>
                 </tr>
                 <tr>
-                    <td>Datos financieros</td>
-                    <td>Funcionamiento de la app</td>
-                    <td>Local (tu dispositivo) y algunas cosas en nuestra nube</td>
+                    <td>Nombre de perfil</td>
+                    <td>Sí</td>
+                    <td>Sí (con contactos en gastos compartidos)</td>
+                    <td>Identificación entre usuarios</td>
                 </tr>
                 <tr>
-                    <td>Audio</td>
-                    <td>Transcripción de voz a texto</td>
-                    <td>Temporal (se elimina tras procesar, no se almacena)</td>
+                    <td>Transacciones financieras</td>
+                    <td>Sí</td>
+                    <td>No</td>
+                    <td>Funcionalidad principal de la app</td>
+                </tr>
+                <tr>
+                    <td>Device ID</td>
+                    <td>Sí</td>
+                    <td>No</td>
+                    <td>Sincronización offline-first</td>
+                </tr>
+                <tr>
+                    <td>Push token</td>
+                    <td>Sí</td>
+                    <td>No (solo FCM como servicio)</td>
+                    <td>Notificaciones push</td>
+                </tr>
+                <tr>
+                    <td>Audio (micrófono)</td>
+                    <td>Sí, temporal</td>
+                    <td>Sí (Google Gemini API)</td>
+                    <td>Transcripción por voz de transacciones</td>
+                </tr>
+                <tr>
+                    <td>Datos de suscripción</td>
+                    <td>Sí</td>
+                    <td>Sí (Mercado Pago)</td>
+                    <td>Gestión de pagos</td>
                 </tr>
             </tbody>
         </table>
-        
-        <h2>4. Compartición de Datos</h2>
-        <p><strong>No vendemos ni compartimos tu información personal con terceros</strong> para fines de marketing.</p>
-        <p>Solo compartimos datos en los siguientes casos:</p>
+
+        <h2>3. Cómo Usamos Tu Información</h2>
+        <p>Utilizamos tu información exclusivamente para:</p>
         <ul>
-            <li><strong>Servicios de autenticación:</strong> Utilizamos proveedores de autenticación (Google, Apple, etc) para gestionar el inicio de sesión.</li>
-            <li><strong>Procesamiento de voz:</strong> El audio se procesa en nuestros servidores para transcripción (solo si usas esta función) y se utiliza un servicio de Google Gemini para procesar el audio.</li>
+            <li><strong>Autenticación:</strong> Tu email se usa para crear y gestionar tu cuenta.</li>
+            <li><strong>Funcionalidad de la app:</strong> Tus transacciones, cuentas y categorías se almacenan para brindarte el servicio.</li>
+            <li><strong>Sincronización:</strong> El Device ID permite sincronizar datos entre tu dispositivo y la nube.</li>
+            <li><strong>Notificaciones:</strong> El push token permite enviarte notificaciones relevantes (gastos compartidos, etc.).</li>
+            <li><strong>Transcripción por voz:</strong> El audio se envía a Google Gemini API para convertir tu voz en datos de transacciones. El audio no se almacena.</li>
+            <li><strong>Pagos:</strong> Los datos de suscripción se comparten con Mercado Pago para gestionar cobros recurrentes.</li>
         </ul>
-        
-        <h2>5. Seguridad de los Datos</h2>
+
+        <h2>4. Servicios de Terceros</h2>
+        <p>Anotalo utiliza los siguientes servicios de terceros para su funcionamiento:</p>
+
+        <h3>4.1 Supabase</h3>
+        <p>Backend, base de datos y autenticación. Los datos almacenados incluyen: email, perfil, transacciones, cuentas, categorías, contactos y gastos compartidos. Los servidores se encuentran en la nube.</p>
+
+        <h3>4.2 Google Gemini API</h3>
+        <p>Procesamiento de audio para transcripción de transacciones por voz. El audio se envía, se procesa y no se almacena por Anotalo. Google tiene sus propias políticas de retención de datos.</p>
+
+        <h3>4.3 Mercado Pago</h3>
+        <p>Procesador de suscripciones. Recibe el email del usuario y datos de pago para la gestión automática de cobros recurrentes.</p>
+
+        <h3>4.4 Firebase Cloud Messaging (FCM)</h3>
+        <p>Servicio de envío de notificaciones push. Recibe el token del dispositivo para entregar las notificaciones.</p>
+
+        <h3>4.5 Expo Updates</h3>
+        <p>Servicio de actualizaciones over-the-air de la aplicación. Recibe metadata del dispositivo para entregar actualizaciones.</p>
+
+        <h2>5. Sincronización y Almacenamiento</h2>
+        <p>Anotalo utiliza una arquitectura offline-first:</p>
+        <ul>
+            <li>Todos los datos se guardan primero <strong>localmente en tu dispositivo</strong> (SQLite).</li>
+            <li>Cuando hay conexión a internet, los datos se sincronizan a la <strong>nube (Supabase)</strong> para respaldo y para habilitar funcionalidades como gastos compartidos.</li>
+            <li>La app funciona completamente offline. La sincronización ocurre automáticamente cuando se recupera la conexión.</li>
+        </ul>
+
+        <h2>6. Gastos Compartidos</h2>
+        <p>Al utilizar la función de gastos compartidos:</p>
+        <ul>
+            <li>Tu nombre de perfil y los detalles de las transacciones compartidas son visibles para los otros participantes del gasto.</li>
+            <li>Los participantes pueden ver el nombre del creador del gasto, el monto y la descripción.</li>
+            <li>Esta información se comparte únicamente con los usuarios involucrados en cada gasto compartido.</li>
+        </ul>
+
+        <h2>7. Retención y Eliminación de Datos</h2>
+        <ul>
+            <li>Los datos se retienen mientras tu cuenta esté activa.</li>
+            <li>Al eliminar tu cuenta desde la app, se eliminan <strong>todos los datos asociados de forma permanente</strong>: perfil, transacciones, cuentas, categorías, contactos, gastos compartidos, tokens, notificaciones y cualquier otro dato vinculado a tu cuenta.</li>
+            <li>Los datos locales (SQLite) se limpian del dispositivo al eliminar la cuenta.</li>
+            <li><strong>Audio:</strong> No se retiene. Se procesa y se descarta inmediatamente después de la transcripción.</li>
+        </ul>
+
+        <h2>8. Seguridad de los Datos</h2>
         <p>Implementamos medidas de seguridad para proteger tu información:</p>
         <ul>
             <li>La comunicación con nuestros servidores utiliza cifrado HTTPS.</li>
-            <li>Las sesiones de usuario están protegidas con tokens seguros.</li>
+            <li>Las sesiones de usuario están protegidas con tokens seguros almacenados de forma encriptada en el dispositivo.</li>
         </ul>
-        
-        <h2>6. Tus Derechos</h2>
+
+        <h2>9. Tus Derechos</h2>
         <p>Tienes derecho a:</p>
         <ul>
             <li><strong>Acceder</strong> a tus datos personales.</li>
-            <li><strong>Eliminar</strong> tu cuenta y datos asociados.</li>
+            <li><strong>Eliminar</strong> tu cuenta y todos los datos asociados desde la app.</li>
             <li><strong>Exportar</strong> tus datos financieros.</li>
         </ul>
         <p>Para ejercer estos derechos, puedes hacerlo directamente desde la aplicación o contactarnos.</p>
-        
-        <h2>7. Menores de Edad</h2>
-        <p>Anotalo es una aplicación educativa de finanzas personales apta para todo público, incluyendo adolescentes.</p>
-        
-        <h2>8. Cambios a Esta Política</h2>
+
+        <h2>10. Menores de Edad</h2>
+        <p>Anotalo no está dirigida a menores de 13 años. Si sos menor de 13 años, no debés usar la app sin la supervisión de un adulto responsable. No recopilamos intencionalmente datos de menores de 13 años.</p>
+
+        <h2>11. Transferencia Internacional de Datos</h2>
+        <p>Tus datos pueden almacenarse y procesarse en servidores ubicados fuera de la República Argentina (a través de servicios como Supabase, Google y Firebase). Al usar la aplicación, consentís la transferencia de tus datos a estos servidores internacionales.</p>
+
+        <h2>12. Cambios a Esta Política</h2>
         <p>Podemos actualizar esta Política de Privacidad ocasionalmente. Te notificaremos sobre cambios significativos a través de la aplicación o por correo electrónico.</p>
-        
-        <h2>9. Contacto</h2>
+
+        <h2>13. Contacto</h2>
         <p>Si tienes preguntas sobre esta Política de Privacidad, puedes contactarnos en:</p>
         <ul>
-            <li><strong>Email:</strong> <a href="mailto:privacidad@anotalo.app">privacidad@anotalo.app</a></li>
+            <li><strong>Email:</strong> <a href="mailto:privacidad@anotalo.online">privacidad@anotalo.online</a></li>
         </ul>
-        
+
         <div class="footer">
             <p>© 2026 Anotalo. Marca en trámite.</p>
         </div>
     </div>
 </body>
 </html>
-
