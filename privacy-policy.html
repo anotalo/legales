@@ -154,7 +154,7 @@
     <div class="container">
         <div class="header">
             <h1>Política de Privacidad</h1>
-            <p class="last-updated">Última actualización: Marzo 2026</p>
+            <p class="last-updated">Última actualización: Junio 2026</p>
         </div>
 
         <h2>1. Introducción</h2>
@@ -175,11 +175,11 @@
                 <tr>
                     <td>Email</td>
                     <td>Sí</td>
-                    <td>No (solo Supabase como backend)</td>
-                    <td>Autenticación, creación de cuenta</td>
+                    <td>No (almacenado en nuestros servidores)</td>
+                    <td>Autenticación, creación de cuenta y comunicaciones del servicio</td>
                 </tr>
                 <tr>
-                    <td>Nombre de perfil</td>
+                    <td>Nombre de perfil e ícono</td>
                     <td>Sí</td>
                     <td>Sí (con contactos en gastos compartidos)</td>
                     <td>Identificación entre usuarios</td>
@@ -188,18 +188,42 @@
                     <td>Transacciones financieras</td>
                     <td>Sí</td>
                     <td>No</td>
-                    <td>Funcionalidad principal de la app</td>
+                    <td>Funcionalidad principal; se sincronizan a la nube para respaldo y multi-dispositivo</td>
                 </tr>
                 <tr>
-                    <td>Device ID</td>
+                    <td>Cuentas y categorías</td>
                     <td>Sí</td>
                     <td>No</td>
-                    <td>Sincronización offline-first</td>
+                    <td>Organización de finanzas; se sincronizan a la nube para respaldo y multi-dispositivo</td>
+                </tr>
+                <tr>
+                    <td>Contactos y solicitudes de contacto</td>
+                    <td>Sí</td>
+                    <td>No (solo con el otro usuario involucrado)</td>
+                    <td>Funciones sociales y gastos compartidos</td>
+                </tr>
+                <tr>
+                    <td>Perfiles fantasma</td>
+                    <td>Sí</td>
+                    <td>Sí (con participantes de gastos compartidos)</td>
+                    <td>Representar participantes sin cuenta en gastos compartidos</td>
+                </tr>
+                <tr>
+                    <td>Notificaciones in-app</td>
+                    <td>Sí</td>
+                    <td>No</td>
+                    <td>Alertas sobre gastos compartidos y actividad relevante</td>
+                </tr>
+                <tr>
+                    <td>Device ID y metadatos de sincronización</td>
+                    <td>Sí</td>
+                    <td>No</td>
+                    <td>Sincronización offline-first, multi-dispositivo y prevención de duplicados</td>
                 </tr>
                 <tr>
                     <td>Push token</td>
                     <td>Sí</td>
-                    <td>No (solo FCM como servicio)</td>
+                    <td>No (solo FCM como servicio de entrega)</td>
                     <td>Notificaciones push</td>
                 </tr>
                 <tr>
@@ -211,8 +235,14 @@
                 <tr>
                     <td>Datos de suscripción</td>
                     <td>Sí</td>
-                    <td>Sí (Mercado Pago)</td>
-                    <td>Gestión de pagos</td>
+                    <td>Sí (Mercado Pago en Android, Apple en iOS)</td>
+                    <td>Gestión de pagos y acceso a funciones premium</td>
+                </tr>
+                <tr>
+                    <td>Aceptaciones legales</td>
+                    <td>Sí</td>
+                    <td>No</td>
+                    <td>Registro de versión de términos y privacidad aceptados</td>
                 </tr>
             </tbody>
         </table>
@@ -221,36 +251,46 @@
         <p>Utilizamos tu información exclusivamente para:</p>
         <ul>
             <li><strong>Autenticación:</strong> Tu email se usa para crear y gestionar tu cuenta.</li>
-            <li><strong>Funcionalidad de la app:</strong> Tus transacciones, cuentas y categorías se almacenan para brindarte el servicio.</li>
-            <li><strong>Sincronización:</strong> El Device ID permite sincronizar datos entre tu dispositivo y la nube.</li>
-            <li><strong>Notificaciones:</strong> El push token permite enviarte notificaciones relevantes (gastos compartidos, etc.).</li>
+            <li><strong>Funcionalidad de la app:</strong> Tus transacciones, cuentas y categorías se almacenan localmente y, cuando hay conexión, se sincronizan a la nube para respaldo, consistencia entre dispositivos y funciones sociales.</li>
+            <li><strong>Sincronización:</strong> El identificador de dispositivo, versiones de fila y metadatos técnicos permiten sincronizar datos entre tu dispositivo y la nube sin duplicados ni conflictos.</li>
+            <li><strong>Notificaciones:</strong> El push token y las notificaciones in-app permiten enviarte alertas relevantes (por ejemplo, gastos compartidos).</li>
             <li><strong>Transcripción por voz:</strong> El audio se envía a Google Gemini API para convertir tu voz en datos de transacciones. El audio no se almacena.</li>
-            <li><strong>Pagos:</strong> Los datos de suscripción se comparten con Mercado Pago para gestionar cobros recurrentes.</li>
+            <li><strong>Pagos:</strong> Los datos de suscripción se comparten con Mercado Pago (Android) o Apple (iOS) para gestionar cobros recurrentes según la plataforma.</li>
         </ul>
 
         <h2>4. Servicios de Terceros</h2>
         <p>Anotalo utiliza los siguientes servicios de terceros para su funcionamiento:</p>
 
-        <h3>4.1 Supabase</h3>
-        <p>Backend, base de datos y autenticación. Los datos almacenados incluyen: email, perfil, transacciones, cuentas, categorías, contactos y gastos compartidos. Los servidores se encuentran en la nube.</p>
+        <h3>4.1 Infraestructura propia (Google Cloud)</h3>
+        <p>APIs y autenticación alojadas en Google Cloud Platform (Cloud Run). Procesan solicitudes de la app, gestionan sesiones y sincronización. Los datos almacenados incluyen perfil, contactos, gastos compartidos, notificaciones, aceptaciones legales y datos financieros sincronizados.</p>
 
-        <h3>4.2 Google Gemini API</h3>
+        <h3>4.2 Better Auth</h3>
+        <p>Servicio de autenticación (email/contraseña, Google, Apple). Gestiona credenciales, sesiones y tokens de acceso. Los datos de sesión pueden incluir dirección IP y agente de usuario con fines de seguridad.</p>
+
+        <h3>4.3 Supabase (PostgreSQL)</h3>
+        <p>Base de datos en la nube donde se almacenan los datos sincronizados: perfil, transacciones, cuentas, categorías, contactos, gastos compartidos, notificaciones y metadatos de sincronización. Los servidores se encuentran en la nube.</p>
+
+        <h3>4.4 Google Gemini API</h3>
         <p>Procesamiento de audio para transcripción de transacciones por voz. El audio se envía, se procesa y no se almacena por Anotalo. Google tiene sus propias políticas de retención de datos.</p>
 
-        <h3>4.3 Mercado Pago</h3>
-        <p>Procesador de suscripciones. Recibe el email del usuario y datos de pago para la gestión automática de cobros recurrentes.</p>
+        <h3>4.5 Mercado Pago</h3>
+        <p>Procesador de suscripciones en Android. Recibe el email del usuario y datos de pago para la gestión automática de cobros recurrentes.</p>
 
-        <h3>4.4 Firebase Cloud Messaging (FCM)</h3>
+        <h3>4.6 Apple (App Store / In-App Purchase)</h3>
+        <p>Procesador de suscripciones en iOS. Los pagos se gestionan a través de tu Apple ID según las políticas de Apple.</p>
+
+        <h3>4.7 Firebase Cloud Messaging (FCM)</h3>
         <p>Servicio de envío de notificaciones push. Recibe el token del dispositivo para entregar las notificaciones.</p>
 
-        <h3>4.5 Expo Updates</h3>
+        <h3>4.8 Expo Updates</h3>
         <p>Servicio de actualizaciones over-the-air de la aplicación. Recibe metadata del dispositivo para entregar actualizaciones.</p>
 
         <h2>5. Sincronización y Almacenamiento</h2>
         <p>Anotalo utiliza una arquitectura offline-first:</p>
         <ul>
             <li>Todos los datos se guardan primero <strong>localmente en tu dispositivo</strong> (SQLite).</li>
-            <li>Cuando hay conexión a internet, los datos se sincronizan a la <strong>nube (Supabase)</strong> para respaldo y para habilitar funcionalidades como gastos compartidos.</li>
+            <li>Cuando hay conexión a internet, los datos se sincronizan a la <strong>nube</strong> para respaldo, uso en múltiples dispositivos y para habilitar funcionalidades como gastos compartidos y notificaciones.</li>
+            <li>Los datos financieros sincronizados incluyen <strong>transacciones, cuentas y categorías</strong>, junto con metadatos técnicos (identificador de dispositivo, versiones de fila, marcas de tiempo) necesarios para mantener la consistencia.</li>
             <li>La app funciona completamente offline. La sincronización ocurre automáticamente cuando se recupera la conexión.</li>
         </ul>
 
@@ -265,7 +305,8 @@
         <h2>7. Retención y Eliminación de Datos</h2>
         <ul>
             <li>Los datos se retienen mientras tu cuenta esté activa.</li>
-            <li>Al eliminar tu cuenta desde la app, se eliminan <strong>todos los datos asociados de forma permanente</strong>: perfil, transacciones, cuentas, categorías, contactos, gastos compartidos, tokens, notificaciones y cualquier otro dato vinculado a tu cuenta.</li>
+            <li>Al eliminar tu cuenta desde la app, se eliminan <strong>todos los datos asociados de forma permanente</strong>: perfil, transacciones, cuentas, categorías, contactos, gastos compartidos, notificaciones, tokens push, aceptaciones legales, registros de suscripción y cualquier otro dato vinculado a tu cuenta en nuestros sistemas.</li>
+            <li>En gastos compartidos con otros usuarios, tu participación puede quedar representada de forma anónima (perfil fantasma) para preservar la integridad del historial del otro participante.</li>
             <li>Los datos locales (SQLite) se limpian del dispositivo al eliminar la cuenta.</li>
             <li><strong>Audio:</strong> No se retiene. Se procesa y se descarta inmediatamente después de la transcripción.</li>
         </ul>
